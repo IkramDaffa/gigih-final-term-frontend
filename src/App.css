@@ -1,0 +1,18 @@
+.navbar-container {
+  background-color: #212529;
+  margin-bottom: 80px;
+}
+.thumbnail-method {
+  cursor: pointer;
+}
+.thumbnail-method .active {
+  font-weight: bold;
+}
+.thumbnail-method .active::after {
+  content: "";
+  width: 100%;
+  margin: auto;
+  display: block;
+  padding-bottom: 10px;
+  border-bottom: 2px solid green;
+}

@@ -1,0 +1,11 @@
+.card-list-video {
+  width: 300px;
+  cursor: pointer;
+}
+.card-image-video {
+  height: 400px;
+}
+.judul-card {
+  position: absolute;
+  bottom: 25px;
+}
