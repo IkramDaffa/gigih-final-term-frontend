@@ -150,6 +150,7 @@ function AddVideo() {
                   required
                   accept=".jpeg, .png, .jpg"
                   onChange={(e) => handleThumbnailUpload(e)}
+                  disabled
                 />
               ) : (
                 <Input
