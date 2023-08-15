@@ -2,6 +2,7 @@ import * as actionType from "../actionsType/getVideos";
 
 const initialState = {
   videos: [],
+  isLoading: false,
 };
 
 function getVideoReducer(state = initialState, action) {
@@ -10,6 +11,11 @@ function getVideoReducer(state = initialState, action) {
       return {
         ...state,
         videos: action.data,
+      };
+    case actionType.SET_STATUS_LOADING:
+      return {
+        ...state,
+        isLoading: action.data,
       };
     default:
       return state;

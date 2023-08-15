@@ -1,4 +1,7 @@
-import { getDataVideos } from "../../common/redux/actions/getVideos";
+import {
+  actionSetIsLoading,
+  getDataVideos,
+} from "../../common/redux/actions/getVideos";
 import Layout from "../../components/layout";
 import {
   Container,
@@ -22,11 +25,20 @@ function Home(props) {
     navigate("videoDetail");
   };
   useEffect(() => {
+    props.setIsLoading(true);
     props.getDataVideos();
   }, [props.getDataVideos.video]);
   return (
     <Layout>
       <Container className="d-flex gap-2 flex-wrap">
+        {props.getVideos.isLoading && (
+          <div
+            class="spinner-border text-primary loading-animation"
+            role="status"
+          >
+            <span class="sr-only"></span>
+          </div>
+        )}
         {props.getVideos.videos &&
           props.getVideos.videos.map((video, index) => {
             return (
@@ -67,6 +79,7 @@ const mapDispatchToProps = (dispatch) => {
     getDataVideos: () => dispatch(getDataVideos()),
     fetchVideoDetail: (id) => dispatch(fetchVideoDetail(id)),
     setIsrender: (data) => dispatch(actionSetIsRender(data)),
+    setIsLoading: (data) => dispatch(actionSetIsLoading(data)),
   };
 };
 
